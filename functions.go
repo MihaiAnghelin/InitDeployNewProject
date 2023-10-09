@@ -59,7 +59,29 @@ func checkNodeVersion() string {
 	cmd, err := exec.Command("node", "--version").Output()
 
 	if err != nil {
-		fmt.Println("Please install node on your system")
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	return string(cmd)
+}
+
+func printPath() {
+	cmd, err := exec.Command("echo", "$PATH").Output()
+
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	fmt.Println(string(cmd))
+}
+
+func checkGit() string {
+	cmd, err := exec.Command("git", "--version").Output()
+
+	if err != nil {
+		fmt.Println("Please install git on your system")
 		os.Exit(1)
 	}
 

@@ -2,6 +2,18 @@ package main
 
 import "fmt"
 
+func checkAllToolsInstalled() {
+	// Check if all the tools are installed on the system
+	printPath()
+	
+	checkDotnetVersion()
+
+	checkNodeVersion()
+
+	checkGit()
+
+}
+
 func setupBackendProjectRepo() {
 	//	Read Backend Repository URL
 	fmt.Println("Backend Repository URL: ")
@@ -57,7 +69,9 @@ func main() {
 	// TODO CHECK IF ALL THE TOOLS ARE INSTALLED ON THE SYSTEM
 	// TODO CHECK IF THE USER HAS ACCESS TO THE REPOSITORY
 
-	setupBackendProjectRepo()
+	checkAllToolsInstalled()
+
+	//setupBackendProjectRepo()
 	//backendPath := "/home/mihai/Dev/GoDotnetTest"
 	//backendURL := "https://gitlab.com/MihaiAnghelin/testdotnet"
 	//
